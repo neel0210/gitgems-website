@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitGems.ai — Trending Open Source Repositories & Video Breakdowns</title>
+  <meta name="description" content="Discover today's trending GitHub repositories with real-time stars and video breakdowns.">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            base: '#060709',
+            card: '#0d0f14',
+            accent: '#a855f7'
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+</head>
+<body class="bg-[#060709] text-slate-100 min-h-screen relative linear-grid selection:bg-purple-500/30 selection:text-purple-300">
+
+  <!-- Ambient Glow Aura -->
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-6xl h-[420px] ambient-aura pointer-events-none -z-10"></div>
+
+  <!-- Minimalist Sticky Header -->
+  <header class="sticky top-0 z-40 bg-[#060709]/85 backdrop-blur-xl border-b border-white/[0.06]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Brand -->
+      <a href="#" class="flex items-center gap-3 group">
+        <img src="logo.png" alt="GitGems" class="w-8 h-8 rounded-lg object-contain bg-slate-900 border border-white/10 p-0.5 group-hover:border-purple-500/50 transition-all">
+        <span class="font-heading font-bold text-lg tracking-tight text-white">GitGems<span class="text-purple-400">.ai</span></span>
+      </a>
+
+      <!-- Action -->
+      <div class="flex items-center gap-3">
+        <button onclick="openSubmitModal()" class="px-3.5 py-1.5 rounded-lg btn-electric text-xs font-semibold flex items-center gap-1.5">
+          <span>✨</span>
+          <span>Get Featured Free</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Header -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8 text-center">
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight text-white max-w-3xl mx-auto leading-tight mb-3">
+        Trending Repositories.<br>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-indigo-300 to-cyan-400">
+          Curated & Verified Daily.
+        </span>
+      </h1>
+
+      <p class="text-slate-400 text-xs sm:text-sm max-w-xl mx-auto mb-8 font-normal">
+        Real-time GitHub velocity data, verified codebases, and autonomous video breakdowns.
+      </p>
+
+      <!-- Search Box -->
+      <div class="max-w-2xl mx-auto">
+        <div class="relative flex items-center">
+          <i data-lucide="search" class="w-4 h-4 text-slate-500 absolute left-4 pointer-events-none"></i>
+          <input 
+            type="text" 
+            id="search-input" 
+            placeholder="Search projects by name, keyword, or language..."
+            class="w-full pl-11 pr-4 py-3 rounded-xl bg-[#0d0f14] border border-white/[0.08] text-white placeholder-slate-500 text-xs sm:text-sm focus:outline-none focus:border-purple-500/60 focus:ring-1 focus:ring-purple-500/60 transition-all"
+          >
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Top Working Videos Spotlight -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div class="flex items-center justify-between mb-4">
+        <div>
+          <h2 class="font-heading text-lg sm:text-xl font-bold text-white tracking-tight flex items-center gap-2">
+            <span>Our Highest Working Reels & Videos</span>
+          </h2>
+          <p class="text-slate-400 text-xs">Autonomous breakdowns across YouTube, Instagram & Facebook</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- YouTube Video Card with Mini Player -->
+        <div class="repo-card rounded-xl p-4 flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2.5">
+              <span class="inline-flex items-center gap-1.5 text-[11px] font-bold px-2 py-0.5 rounded-md bg-red-500/10 text-red-400 border border-red-500/20 font-mono">
+                <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                YouTube Short
+              </span>
+              <span class="inline-flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded bg-white/[0.04] text-slate-300 border border-white/[0.06]">
+                <i data-lucide="eye" class="w-3 h-3 text-red-400"></i>
+                <span>1.4k views</span>
+              </span>
+            </div>
+
+            <!-- Mini Player Embed -->
+            <div class="relative w-full aspect-video rounded-lg overflow-hidden bg-black border border-white/[0.08] mb-3">
+              <iframe 
+                class="w-full h-full"
+                src="https://www.youtube-nocookie.com/embed/qTl3q27VswQ?rel=0" 
+                title="ddalcu/mlx-serve breakdown"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+            </div>
+
+            <h3 class="font-heading text-sm font-bold text-white group-hover:text-red-400 transition-colors mb-1 line-clamp-1">
+              One Native App Replaces Your Entire AI Stack
+            </h3>
+            <p class="text-[11px] text-slate-400 line-clamp-2 mb-3">
+              Local chat, image, and video generation without cloud overhead on Apple Silicon.
+            </p>
+          </div>
+          <div class="flex items-center justify-between gap-2 pt-2 border-t border-white/[0.06]">
+            <span class="text-[10px] font-mono text-slate-500">ddalcu/mlx-serve</span>
+            <a href="https://youtube.com/shorts/qTl3q27VswQ" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-md bg-red-500/10 hover:bg-red-500/20 border border-red-500/30 text-red-400 text-xs font-semibold flex items-center gap-1 transition-all">
+              <span>Watch</span>
+              <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Instagram Reel Card with Mini Player -->
+        <div class="repo-card rounded-xl p-4 flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2.5">
+              <span class="inline-flex items-center gap-1.5 text-[11px] font-bold px-2 py-0.5 rounded-md bg-pink-500/10 text-pink-400 border border-pink-500/20 font-mono">
+                <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                Instagram Reel
+              </span>
+              <span class="inline-flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded bg-white/[0.04] text-slate-300 border border-white/[0.06]">
+                <i data-lucide="eye" class="w-3 h-3 text-pink-400"></i>
+                <span>2.1k views</span>
+              </span>
+            </div>
+
+            <!-- Mini Player Video Preview -->
+            <div class="relative w-full aspect-video rounded-lg overflow-hidden bg-black border border-white/[0.08] mb-3">
+              <video 
+                class="w-full h-full object-cover" 
+                src="output/locally-uncensored_reel.mp4" 
+                controls 
+                preload="metadata"
+                playsinline>
+              </video>
+            </div>
+
+            <h3 class="font-heading text-sm font-bold text-white group-hover:text-pink-400 transition-colors mb-1 line-clamp-1">
+              Stop Paying for Cloud AI: Local All-in-One Studio
+            </h3>
+            <p class="text-[11px] text-slate-400 line-clamp-2 mb-3">
+              Desktop app bundling local chat, image & video gen, and an autonomous coding agent into one free package.
+            </p>
+          </div>
+          <div class="flex items-center justify-between gap-2 pt-2 border-t border-white/[0.06]">
+            <span class="text-[10px] font-mono text-slate-500">PurpleDoubleD/locally-uncensored</span>
+            <a href="https://github.com/PurpleDoubleD/locally-uncensored" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-md bg-pink-500/10 hover:bg-pink-500/20 border border-pink-500/30 text-pink-400 text-xs font-semibold flex items-center gap-1 transition-all">
+              <span>Watch</span>
+              <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Facebook Reel Card with Mini Player -->
+        <div class="repo-card rounded-xl p-4 flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2.5">
+              <span class="inline-flex items-center gap-1.5 text-[11px] font-bold px-2 py-0.5 rounded-md bg-blue-500/10 text-blue-400 border border-blue-500/20 font-mono">
+                <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                Facebook Reel
+              </span>
+              <span class="inline-flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded bg-white/[0.04] text-slate-300 border border-white/[0.06]">
+                <i data-lucide="eye" class="w-3 h-3 text-blue-400"></i>
+                <span>1.8k views</span>
+              </span>
+            </div>
+
+            <!-- Mini Player Video Preview -->
+            <div class="relative w-full aspect-video rounded-lg overflow-hidden bg-black border border-white/[0.08] mb-3">
+              <video 
+                class="w-full h-full object-cover" 
+                src="output/kiosk-satellite_reel.mp4" 
+                controls 
+                preload="metadata"
+                playsinline>
+              </video>
+            </div>
+
+            <h3 class="font-heading text-sm font-bold text-white group-hover:text-blue-400 transition-colors mb-1 line-clamp-1">
+              Turn Any Android Phone Into A Smart Home Kiosk
+            </h3>
+            <p class="text-[11px] text-slate-400 line-clamp-2 mb-3">
+              Transforms old Android devices into clean smart home dashboards with voice control and zero ads.
+            </p>
+          </div>
+          <div class="flex items-center justify-between gap-2 pt-2 border-t border-white/[0.06]">
+            <span class="text-[10px] font-mono text-slate-500">jxlarrea/kiosk-satellite</span>
+            <a href="https://www.facebook.com/reel/2232352817681664" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-md bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/30 text-blue-400 text-xs font-semibold flex items-center gap-1 transition-all">
+              <span>Watch</span>
+              <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Repositories Grid -->
+    <section id="trending" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex items-center justify-between mb-4">
+        <div>
+          <h2 class="font-heading text-lg sm:text-xl font-bold text-white tracking-tight">Today's Trending Repositories</h2>
+          <p class="text-slate-400 text-xs">Ranked by daily velocity & stars directly from GitHub</p>
+        </div>
+        <div id="repo-count" class="font-mono text-xs text-slate-500"></div>
+      </div>
+
+      <div id="gems-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- Rendered by app.js with real data -->
+      </div>
+    </section>
+
+    <!-- News Radar & Carousel Sources -->
+    <section id="news" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 border-t border-white/[0.06]">
+      <div class="flex items-center justify-between mb-4">
+        <div>
+          <div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-[11px] font-mono mb-1">
+            <span>⚡ CAROUSEL PIPELINE SOURCES</span>
+          </div>
+          <h2 class="font-heading text-lg sm:text-xl font-bold text-white tracking-tight">AI & Tech News Radar</h2>
+          <p class="text-slate-400 text-xs">Curated breakthroughs scouted from Hacker News, TechCrunch & Ars Technica for daily carousel builds</p>
+        </div>
+      </div>
+
+      <div id="news-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- Rendered by app.js from website/data/news.json -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Minimal Footer -->
+  <footer class="border-t border-white/[0.06] py-10 text-slate-400 text-xs mt-12 bg-[#060709]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <img src="logo.png" alt="GitGems" class="w-5 h-5 rounded object-contain">
+        <span class="font-heading font-bold text-white">GitGems<span class="text-purple-400">.ai</span></span>
+      </div>
+
+      <div class="flex items-center gap-6 text-slate-400">
+        <a href="https://www.youtube.com/@Gitgemsdaily" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition-colors">YouTube</a>
+        <a href="https://www.instagram.com/gitgems.ai" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition-colors">Instagram</a>
+        <a href="https://www.facebook.com/gitgems" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition-colors">Facebook</a>
+        <a href="https://github.com/neel0210/gitgems-website" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition-colors">GitHub</a>
+      </div>
+
+      <div class="font-mono text-slate-600 text-[11px]">
+        © 2026 GitGems
+      </div>
+    </div>
+  </footer>
+
+  <!-- Video Modal -->
+  <div id="repo-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="relative bg-[#0d0f14] border border-white/10 rounded-2xl p-5 max-w-sm w-full shadow-2xl flex flex-col items-center">
+      <div class="w-full flex items-center justify-between mb-3">
+        <div>
+          <h3 id="modal-title" class="font-heading text-sm font-bold text-white">Reel Preview</h3>
+          <a id="modal-slug" href="#" target="_blank" class="text-xs text-purple-400 hover:underline font-mono">owner/repo</a>
+        </div>
+        <button onclick="closeModal()" class="p-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <div class="w-[260px] h-[460px] rounded-xl overflow-hidden bg-black border border-white/10 mb-3">
+        <video id="modal-video" src="" class="w-full h-full object-cover" controls autoplay playsinline></video>
+      </div>
+    </div>
+  </div>
+
+  <!-- Submit Modal (Get Featured For Free) -->
+  <div id="submit-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="relative bg-[#0d0f14] border border-white/10 rounded-2xl p-6 sm:p-7 max-w-md w-full shadow-2xl">
+      <div class="flex items-start justify-between mb-4">
+        <div>
+          <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-[11px] font-semibold mb-2">
+            <span>✨ 100% FREE FEATURE</span>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-white tracking-tight">Get Your Project Featured for Free</h3>
+          <p class="text-xs text-slate-400 mt-1 leading-relaxed">
+            Submit your open source repository. Requests are sent directly to our team via email and reviewed within 48 to 72 hours.
+          </p>
+        </div>
+        <button onclick="closeSubmitModal()" class="p-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white shrink-0 ml-2">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <form onsubmit="window.handleModalSubmit(event)" class="space-y-3.5 text-xs text-left">
+        <div>
+          <label class="block font-medium text-slate-300 mb-1">GitHub Repository URL</label>
+          <input type="url" id="modal-repo-url" required placeholder="https://github.com/owner/repo" class="w-full px-3.5 py-2.5 rounded-xl bg-black border border-white/10 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-purple-500">
+        </div>
+
+        <div>
+          <label class="block font-medium text-slate-300 mb-1">Your Email</label>
+          <input type="email" id="modal-email" required placeholder="developer@example.com" class="w-full px-3.5 py-2.5 rounded-xl bg-black border border-white/10 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-purple-500">
+        </div>
+
+        <div>
+          <label class="block font-medium text-slate-300 mb-1">Project Note (Optional)</label>
+          <input type="text" id="modal-note" placeholder="What does your project do?" class="w-full px-3.5 py-2.5 rounded-xl bg-black border border-white/10 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-purple-500">
+        </div>
+
+        <button type="submit" class="w-full py-2.5 rounded-xl btn-electric text-xs font-bold mt-2">
+          Send Feature Request
+        </button>
+
+        <p class="text-[11px] text-center text-slate-500 mt-2 font-mono">
+          ⏱ Reviewed & reverted in 48 to 72 hours
+        </p>
+
+        <div id="modal-success-notice" class="hidden mt-3 p-3 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-medium text-center">
+          ✓ Request sent! Your project will be reviewed within 48 to 72 hours.
+        </div>
+
+        <div id="modal-error-notice" class="hidden mt-3 p-3 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs font-medium text-center">
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

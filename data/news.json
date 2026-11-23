@@ -1,0 +1,90 @@
+[
+  {
+    "title": "87% of the Anthropic power will come from gas and 11% from coal in 2028",
+    "url": "https://betterdatacenterproject.com/2026/11/16/how-ai-is-powered-a-breakdown-of-byop-and-grid-power/",
+    "source": "Hacker News",
+    "score": 911,
+    "comments": 908,
+    "pillar": "NEWS",
+    "meta": "911 points, 908 comments",
+    "publishedAt": "2026-11-22T08:57:34+00:00",
+    "image_url": ""
+  },
+  {
+    "title": "A Beginner's Guide to Local AI with Inkling, Qwen, and Unsloth",
+    "url": "https://www.gpupartner.com/blog/beginners-guide-local-ai-inkling-qwen-unsloth",
+    "source": "Hacker News",
+    "score": 303,
+    "comments": 128,
+    "pillar": "PRO TIP",
+    "meta": "303 points, 128 comments",
+    "publishedAt": "2026-11-22T21:01:16+00:00",
+    "image_url": ""
+  },
+  {
+    "title": "Show HN: I built a game where you are an LLM's subagent",
+    "url": "https://github.com/gulivan/worker755",
+    "source": "Hacker News",
+    "score": 282,
+    "comments": 67,
+    "pillar": "GEM",
+    "meta": "282 points, 67 comments",
+    "publishedAt": "2026-11-22T13:56:58+00:00",
+    "image_url": ""
+  },
+  {
+    "title": "Fast-Anything: Don't rewrite it in Rust. Rewrite the 5% that's slow",
+    "url": "https://github.com/EL4CTEO/fast-anything",
+    "source": "Hacker News",
+    "score": 181,
+    "comments": 153,
+    "pillar": "GEM",
+    "meta": "181 points, 153 comments",
+    "publishedAt": "2026-11-22T04:10:09+00:00",
+    "image_url": ""
+  },
+  {
+    "title": "Agent swarm trying to solve P vs. NP",
+    "url": "https://pequalnp.com/",
+    "source": "Hacker News",
+    "score": 127,
+    "comments": 107,
+    "pillar": "NEWS",
+    "meta": "127 points, 107 comments",
+    "publishedAt": "2026-11-22T21:53:45+00:00",
+    "image_url": ""
+  },
+  {
+    "title": "Self-hosted library branch over public web OPDS",
+    "url": "https://joinmayberry.com/",
+    "source": "Hacker News",
+    "score": 114,
+    "comments": 31,
+    "pillar": "NEWS",
+    "meta": "114 points, 31 comments",
+    "publishedAt": "2026-11-19T21:15:47+00:00",
+    "image_url": ""
+  },
+  {
+    "title": "Here are the top AI agents that can live in your text messages",
+    "url": "https://techcrunch.com/2026/11/21/all-the-ai-agents-that-can-live-in-your-text-messages/",
+    "source": "TechCrunch AI",
+    "score": 80,
+    "comments": 0,
+    "pillar": "NEWS",
+    "meta": "2026-11-21",
+    "publishedAt": "2026-11-21T17:00:00+00:00",
+    "image_url": ""
+  },
+  {
+    "title": "Banks Have Had It Up to Here With Your AI Agent",
+    "url": "https://www.wired.com/story/banks-are-cracking-down-on-ai-agents/",
+    "source": "Wired AI",
+    "score": 80,
+    "comments": 0,
+    "pillar": "NEWS",
+    "meta": "2026-11-22",
+    "publishedAt": "2026-11-22T11:00:00+00:00",
+    "image_url": "https://media.wired.com/photos/6b0080a25f35c47a5c116087/master/pass/GettyImages-2285133719.jpg"
+  }
+]
